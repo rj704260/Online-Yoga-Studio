@@ -1,0 +1,148 @@
+/* General Styling */
+/* General Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabs button {
+    padding: 12px 18px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    font-size: 16px;
+    flex: 1;
+    transition: background 0.3s, color 0.3s;
+}
+
+.tabs button.active {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.4);
+}
+
+/* Forms */
+.form-section {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-section.active {
+    display: block;
+}
+
+/* Input Fields */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #f9f9f9;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Error Message */
+.input-group input.error {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}
+
+.input-group .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Buttons */
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Select Dropdown */
+.input-group select {
+    background: rgb(139, 74, 243);
+    cursor: pointer;
+}
+
+/* Hide Class */
+.hidden {
+    display: none;
+}
+
+/* Active Class */
+.active {
+    background-color: #e6d6e4;
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

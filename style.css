@@ -1,0 +1,258 @@
+body {
+    font-family: sans-serif; /* Choose a suitable font */
+    margin: 0; /* Remove default body margin */
+  }
+  
+nav {
+    background-color: #e0e0e0; /* Light gray background */
+    padding: 10px; /* Adjust padding as needed */
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Distribute space between logo and links */
+  }
+  
+  .nav logo {
+    display: flex;
+    align-items: left;
+    object-fit: cover;
+
+}
+
+.logo img {
+    display: block; /* Ensure it's visible */
+    width:3cm;
+    height:2cm;
+}
+
+
+nav ul {
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Arrange list items horizontally */
+  }
+  
+  nav li {
+    margin-left: 20px; /* Add space between list items */
+  }
+  
+  nav a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #0797aa; /* LinkedIn blue color for links */
+  }
+  
+  .sign-in-button {
+    background-color: #0797aa; /* LinkedIn blue */
+    color: white;
+    border: none;
+    padding: 8px 16px; /* Adjust padding as needed */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Adjust as needed */
+    cursor: pointer;
+    border-radius: 20px; /* Rounded corners */
+    font-family: sans-serif; /* Match the font */
+  }
+  
+  .sign-in-button:hover {
+    background-color: #1da4a8; /* Darker blue on hover */
+  }
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+
+.hero {
+    background-color: #e0e0e0; /* Light gray background for hero */
+    padding: 100px 0; /* Adjust vertical padding */
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5em; /* Adjust font size */
+    color: #0077b5; /* LinkedIn blue (adjust as needed) */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.hero p {
+    font-size: 1.2em; /* Adjust font size */
+    color: #666; /* Darker gray for description */
+    margin-bottom: 30px; /* Space below paragraph */
+    max-width: 600px; /* Limit paragraph width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5; /* Improve line height for readability */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px; /* Adjust padding */
+    background-color: #ff6600; /* Orange button */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.1em; /* Adjust font size */
+    font-weight: bold; /* Make the button text bold */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.cta-button:hover {
+    background-color: #e65c00; /* Darker orange on hover */
+}
+
+.class-categories {
+    display: flex; /* Horizontal arrangement */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-around; /* Distribute space around items */
+    padding: 20px;
+}
+
+.class-category {
+    text-align: center; /* Center content within each category */
+    margin: 10px; /* Space between categories */
+    flex: 1 0 200px; /* Adjust minimum width (200px) as needed */
+    /* OR, for equal width: flex: 1; */
+}
+
+.class-category img {
+    max-width: 100%; /* Image scales within container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevents small space below image */
+    margin: 0 auto 10px; /* Center image and add space below */
+}
+
+.class-category h3 {
+    margin: 0;
+}
+
+
+.classes-section {
+    padding: 60px; /* Adjust padding as needed */
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.classes-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.classes-title h2 {
+    font-size: 2em;
+    color: #333; /* Dark gray */
+    margin-bottom: 10px;
+}
+
+.classes-title p {
+    color: #666; /* Slightly lighter gray */
+    max-width: 800px;
+    margin: 0 auto; /* Center the paragraph */
+    line-height: 1.6;
+}
+
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 40px; /* Space between grid items */
+}
+
+.class-category {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+}
+
+
+.class-category h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.class-category p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.browse-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #0077b5; /* LinkedIn blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+
+
+
+footer {
+    background-color: #f0f0f0; /* Light gray background, adjust as needed */
+    padding: 20px;
+    font-family: sans-serif; /* Use your preferred font */
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: space-around; /* Distribute sections evenly */
+    max-width: 960px; /* Adjust as needed */
+    margin: 0 auto; /* Center the footer */
+  }
+  
+  .footer-section {
+    width: 18%; /* Adjust width for desired spacing */
+    margin-bottom: 20px; /* Space between sections */
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-section a {
+    text-decoration: none;
+    color: #333; /* Dark gray link color */
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc; /* Add a top border */
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .social-icons {
+    display: flex;
+  }
+  
+  .social-icons a {
+    margin-left: 10px;
+  }
+  
+  .social-icons img {
+    width: 20px;
+    height: 20px;
+  }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan</title>
+    <link rel="stylesheet" href="diet_plan.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Personalized Diet Plan</h1>
+        <p>Select a condition to view the diet plan:</p>
+
+        <select id="disease-select" onchange="showDietPlan()">
+            <option value="">-- Select Condition --</option>
+            <option value="diabetes" style="background-image: url(programpics/diabetes.png);"> diabetes</option>
+            <option value="hypertension" style="background-image: url(programpics/hypertension.png);">hypertension</option>
+            <option value="asthma" style="background-image: url(programpics/asthma.png);">asthma</option>
+            <option value="heart_disease" style="background-image: url(programpics/heart_disease.png);">heart_disease</option>
+            <option value="arthritis"style="background-image: url(programpics/arthritis.png);">arthritis</option>
+            <option value="obesity"style="background-image: url(programpics/obesity.png);">obesity</option>
+            <option value="thyroid"style="background-image: url(programpics/thyroid.png);">thyroid</option>
+            <option value="back_pain"style="background-image: url(programpics/back_pain.png);">back_pain</option>
+            <option value="depression"style="background-image: url(programpics/depression.png);">depression</option>
+            <option value="pcos"style="background-image: url(programpics/pcos.png);">pcos</option>
+            <option value="insomnia"style="background-image: url(programpics/insomnia.png);">insomnia</option>
+            <option value="skin_disorders"style="background-image: url(programpics/skin_disorders.png);">skin_disorders</option>
+            <option value="joint_pain"style="background-image: url(programpics/joint_pain.png);">joint_pain</option>
+            <option value="high_cholesterol"style="background-image: url(programpics/high_cholesterol.png);">high_cholesterol</option>
+            <option value="migraines"style="background-image: url(programpics/migraines.png);">migraines</option>
+            <option value="ibs"style="background-image: url(programpics/ibs.png);">ibs</option>
+            <option value="osteoporosis"style="background-image: url(programpics/osteoporosis.png);">osteoporosis</option>
+            <option value="anxiety"style="background-image: url(programpics/anxiety.png);">anxiety</option>
+            <option value="acid_reflux"style="background-image: url(programpics/acid_reflux.png);">acid_reflux</option>
+            <option value="fatigue"style="background-image: url(programpics/fatigue.png);">fatigue</option>
+        </select>
+        <div id="diet-plan"></div>
+
+        <!-- Image & Description Container -->
+        <div id="diet-details">
+            <p id="diet-description"></p>
+        </div>
+    </div>
+
+    <script defer src="diet_plan.js"></script>
+</body>
+</html>
+

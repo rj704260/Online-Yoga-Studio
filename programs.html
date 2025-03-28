@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Programs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            background: #008080;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .tab.active {
+            background: #005f5f;
+        }
+        .programs-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        .programs {
+            display: none;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 0;
+            scroll-behavior: smooth;
+        }
+        .programs.active {
+            display: flex;
+        }
+        .program-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 250px;
+            text-align: center;
+            flex: 0 0 auto;
+            border: 2px solid #008080;
+        }
+        .program-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .program-card h3 {
+            color: #008080;
+        }
+        .scroll-buttons {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+        }
+        .scroll-buttons button {
+            background: #008080;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Yoga Programs</h1>
+        <div class="tabs">
+            <button class="tab active" onclick="showProgram(0)">7 Days</button>
+            <button class="tab" onclick="showProgram(1)">14 Days</button>
+            <button class="tab" onclick="showProgram(2)">21 Days</button>
+        </div>
+        
+        <div class="programs-container">
+            <div class="scroll-buttons">
+                <button onclick="scrollPrograms(-1)">&#9665;</button>
+                <button onclick="scrollPrograms(1)">&#9655;</button>
+            </div>
+            <div class="programs active" id="program-list-7">
+                <div class="program-card">
+                    <img src="programpics\p1.7.png" alt="Yoga Animation">
+                    <h3>Beginner Flow</h3>
+                    <p>Start your yoga journey with easy poses.</p>
+                </div>
+                <div class="program-card">
+                    <img src="programpics\p2.7.png" alt="Yoga Animation">
+                    <h3>Flexibility Boost</h3>
+                    <p>Enhance flexibility with guided stretching.</p>
+                </div>
+                <div class="program-card">
+                    <img src="programpics\p3.7.png" alt="Yoga Animation">
+                    <h3>Core Strength</h3>
+                    <p>Improve balance and core power.</p>
+                </div>
+                <div class="program-card">
+                    <img src="programpics\p4.7.png" alt="Yoga Animation">
+                    <h3>Mindful Meditation</h3>
+                    <p>Relax with guided mindfulness exercises.</p>
+                </div>
+                <div class="program-card">
+                    <img src="programpics\p5.7.png" alt="Yoga Animation">
+                    <h3>Morning Energizer</h3>
+                    <p>Kickstart your day with powerful yoga.</p>
+                </div>
+            </div>
+            <div class="programs" id="program-list-14">
+                <div class="program-card">
+                    <img src="programpics\p6.7.png" alt="Yoga Animation">
+                    <h3>Intermediate Flow</h3>
+                    <p>Deepen your practice with new poses.</p>
+                </div>
+                <div class="program-card">
+                    <img src="programpics\p7.7.png" alt="Yoga Animation">
+                    <h3>Balance Mastery</h3>
+                    <p>Improve posture and balance control.</p>
+                </div>
+                <div class="program-card">
+                    <img src="programpics\p8.7.png" alt="Yoga Animation">
+                    <h3>Breathwork & Relaxation</h3>
+                    <p>Learn advanced breathing techniques.</p>
+                </div>
+                <div class="program-card">
+                    <img src="programpics\p9.7.png" alt="Yoga Animation">
+                    <h3>Strength & Endurance</h3>
+                    <p>Boost stamina with intense workouts.</p>
+                </div>
+                <div class="program-card">
+                    <img src="programpics\p10.7.png" alt="Yoga Animation">
+                    <h3>Advanced Yoga Challenge</h3>
+                    <p>Push your limits with power yoga.</p>
+                </div>
+            </div>
+            <div class="programs active" id="program-list-21">
+                <div class="program-card">
+                    <img src="programpics\p11.7.png" alt="Yoga Animation">
+                    <h3>Daily Yoga Classes</h3>
+                    <p>such as beginner-friendly sequences, strength-building practices, flexibility routines, or restorative sessions.</p>
+                </div>
+                <div class="program-card">
+                    <img src="programpics\p12.7.png" alt="Yoga Animation">
+                    <h3>Guided Meditations</h3>
+                    <p>Incorporating meditation practices to enhance mindfulness and relaxation, helping participants connect with their breath and inner peace.</p>
+                </div>
+                <div class="program-card">
+                    <img src="programpics\p13.7.png" alt="Yoga Animation">
+                    <h3>Challenging Sequences</h3>
+                    <p>For those looking to deepen their practice, the program may include vinyasa or power yoga sessions.</p>
+                </div>
+                <div class="program-card">
+                    <img src="programpics\p14.7.png" alt="Yoga Animation">
+                    <h3>Holistic Practices</h3>
+                    <p>Some programs may also include elements like breathwork (pranayama), nutrition tips, and self-care practices to complement the physical aspects of yoga.</p>
+                </div>
+                <div class="program-card">
+                    <img src="programpics\p15.7.png" alt="Yoga Animation">
+                    <h3>Progress Tracking</h3>
+                    <p>Tools or journaling prompts to track physical and emotional progress throughout the 21 days.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showProgram(index) {
+            let tabs = document.querySelectorAll(".tab");
+            let programs = document.querySelectorAll(".programs");
+            
+            tabs.forEach(tab => tab.classList.remove("active"));
+            tabs[index].classList.add("active");
+            
+            programs.forEach(prog => prog.classList.remove("active"));
+            programs[index].classList.add("active");
+        }
+        
+        function scrollPrograms(direction) {
+            let programList = document.querySelector(".programs.active");
+            let scrollAmount = 300;
+            programList.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

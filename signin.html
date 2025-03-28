@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Sign In & Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script defer src="validation.js"></script> <!-- Validation script -->
+</head>
+<body>
+
+    <div class="container">
+        <div class="tabs">
+            <button id="signin-tab" class="active">Sign In</button>
+            <button id="signup-tab">Sign Up</button>
+        </div>
+
+        <!-- Sign In Form -->
+        <div id="signin-form" class="form-section">
+            <h1>Sign In</h1>
+            <form id="signinForm">
+                <div class="input-group">
+                    <label for="signin-email">Email</label>
+                    <input type="email" id="signin-email" name="signin_email" required autocomplete="off">
+                    <span class="error-message" id="signin-email-error"></span>
+                </div>
+                <div class="input-group">
+                    <label for="signin-password">Password</label>
+                    <input type="password" id="signin-password" name="signin_password" required minlength="6" maxlength="20">
+                    <span class="error-message" id="signin-password-error"></span>
+                </div>
+                <button type="submit">Login</button>
+                <div class="links">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <div id="signin-message"></div>
+            </form>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div id="signup-form" class="form-section hidden">
+            <h1>Sign Up</h1>
+            <form id="signupForm">
+                <div class="input-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" name="signup_name" required maxlength="50">
+                    <span class="error-message" id="signup-name-error"></span>
+                </div>
+                <div class="input-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" name="signup_email" required autocomplete="off">
+                    <span class="error-message" id="signup-email-error"></span>
+                </div>
+                <div class="input-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="signup_password" required minlength="6" maxlength="20">
+                    <span class="error-message" id="signup-password-error"></span>
+                </div>
+                <div class="input-group">
+                    <label for="signup-weight">Weight (kg)</label>
+                    <input type="number" id="signup-weight" name="signup_weight" required min="30" max="300" step="0.1">
+                    <span class="error-message" id="signup-weight-error"></span>
+                </div>
+
+                <!-- Health Condition Dropdown -->
+                <div class="input-group">
+                    <label for="health-condition">Select Your Health Condition</label>
+                    <select id="health-condition" name="health_condition" required onchange="checkOtherCondition()">
+                        <option value="" disabled selected>Select a condition</option>
+                        <option value="Diabetes">Diabetes</option>
+                        <option value="Hypertension">Hypertension</option>
+                        <option value="Asthma">Asthma</option>
+                        <option value="Heart Disease">Heart Disease</option>
+                        <option value="Other">Other (Specify Below)</option>
+                    </select>
+                </div>
+
+                <!-- Other Disease Input (Only appears if "Other" is selected) -->
+                <div class="input-group" id="other-condition-group" style="display: none;">
+                    <label for="other-disease">Other Health Condition</label>
+                    <input type="text" id="other-disease" name="other_disease" maxlength="50">
+                    <span class="error-message" id="other-disease-error"></span>
+                </div>
+
+                <button type="submit">Sign Up</button>
+                <div id="signup-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function checkOtherCondition() {
+            var healthCondition = document.getElementById("health-condition").value;
+            var otherConditionGroup = document.getElementById("other-condition-group");
+            var otherDiseaseInput = document.getElementById("other-disease");
+
+            if (healthCondition === "Other") {
+                otherConditionGroup.style.display = "block";
+                otherDiseaseInput.setAttribute("required", "true");
+            } else {
+                otherConditionGroup.style.display = "none";
+                otherDiseaseInput.removeAttribute("required");
+                otherDiseaseInput.value = ""; // Clear input if not "Other"
+            }
+        }
+
+        // ✅ Handle Sign Up Submission Using AJAX
+        document.getElementById("signupForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const formData = {
+                signup_name: document.getElementById("signup-name").value,
+                signup_email: document.getElementById("signup-email").value,
+                signup_password: document.getElementById("signup-password").value,
+                signup_weight: document.getElementById("signup-weight").value,
+                health_condition: document.getElementById("health-condition").value,
+                other_disease: document.getElementById("other-disease").value || null
+            };
+
+            try {
+                const response = await fetch("http://localhost:3000/signup", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                document.getElementById("signup-message").innerText = result.message || result.error;
+            } catch (error) {
+                document.getElementById("signup-message").innerText = "Server error!";
+            }
+        });
+
+        // ✅ Handle Sign In Submission Using AJAX
+        document.getElementById("signinForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const loginData = {
+                signin_email: document.getElementById("signin-email").value,
+                signin_password: document.getElementById("signin-password").value
+            };
+
+            try {
+                const response = await fetch("http://localhost:3000/signin", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(loginData)
+                });
+
+                const result = await response.json();
+                document.getElementById("signin-message").innerText = result.message || result.error;
+            } catch (error) {
+                document.getElementById("signin-message").innerText = "Server error!";
+            }
+        });
+    </script>
+
+</body>
+</html>
